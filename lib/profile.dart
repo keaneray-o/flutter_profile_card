@@ -1,53 +1,36 @@
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
-  const ProfileCard
-({super.key});
+  const ProfileCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('keane rayo prasetya'),
-        ),
-        /**
-         * Row dan column bisa memiliki banyak
-         * widget, row itu kesamping
-         * column itu ke bawah
-         */
-        body: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              
-              child: Container(
-                child: Text(
-                  'Nama',
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    backgroundColor: Colors.redAccent,
-                    fontFamily: 'Poppins',//harus ada fontnya
-                  ),
-                  ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor:  Colors.redAccent,
+        title: const Text('My Profile', 
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,),),
+      ),
+      body: Center(
+        child:  Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Keane Rayo Prasetya', style: TextStyle(
+              fontSize: 20, 
+              fontWeight: FontWeight.bold
               ),
-            ),
-            Text('KEANE RAYO PRASETYA',
-            style: TextStyle(
-              backgroundColor: Color.fromARGB(
-                200,
-                100,
-                100,
-                100,
-              )
-            ),)
+              ),
+            Row(children: <Widget>[
+              Column(),
+              Column(),
+            
+            ],
+            )  
           ],
         ),
-      ),  
-      debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
