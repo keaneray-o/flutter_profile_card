@@ -36,7 +36,9 @@ class ProfileCard extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                    ),
                     //only: hanya memmberi satu posisi
                     //symmetric : memberi jarak sumbu x/y
                     //all : memberi semua jarak 
@@ -53,6 +55,28 @@ class ProfileCard extends StatelessWidget {
                     'Keane Rayo Prasetya',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
+                  Row(
+                    children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.5,
+                            decoration: BoxDecoration(
+                              color: Colors.redAccent,
+                              borderRadius: BorderRadius.circular(15,),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('Address'),
+                            )),
+                        )
+                      ],
+                    ),
+                    Column(),
+                    ],
+                    ),
                 ],
               ),
             ),
