@@ -50,19 +50,27 @@ class ProfileCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 10,),
                   Text(
                     'Keane Rayo Prasetya',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    /**
+                     * start itu kiri
+                     * center itu tengah
+                     * end itu kanan
+                     * spaceBetween itu ke pojok dari bagian
+                     * spaceAround itu ke tangah pojok dari bagian
+                     * spaceEvenly itu ke tangah hampir mirip SpaceAround
+                     */
                     children: <Widget>[
                     Column(
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            width: MediaQuery.of(context).size.width * 0.5,
                             decoration: BoxDecoration(
                               color: Colors.redAccent,
                               borderRadius: BorderRadius.circular(15,),
@@ -74,7 +82,23 @@ class ProfileCard extends StatelessWidget {
                         )
                       ],
                     ),
-                    Column(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.redAccent,
+                              borderRadius: BorderRadius.circular(15,),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('Tempat tanggal lahir'),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                     ],
                     ),
                 ],
