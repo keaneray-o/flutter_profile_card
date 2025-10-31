@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/DetailProfile.dart';
 
 class Aboutme extends StatelessWidget {
   const Aboutme({super.key});
@@ -17,6 +16,7 @@ class Aboutme extends StatelessWidget {
     '👍',
     '👌',
   ];
+  final title = 'Keane Rayo Prasetya';
 
   /**
    * tampilkan data image dari internet menggunakan
@@ -54,7 +54,7 @@ class Aboutme extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
                   child: Text(
-                    'Keane Rayo Prasetya'.toUpperCase(),
+                    title.toUpperCase(),
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -193,27 +193,56 @@ class Aboutme extends StatelessWidget {
                     ),
                   ],
                 ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (Context) => Detailprofile(title: title,),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'detail profile'.toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: 'Michroma',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 /**
                  * SCHEDULE
                  */
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(69, 8, 8, 8),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Text(
-                      'Schedule'.toUpperCase(),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Michroma',
-                        fontSize: 18,
-                        letterSpacing: 2,
-                        color: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(69, 8, 8, 8),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Text(
+                        'Schedule'.toUpperCase(),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Michroma',
+                          fontSize: 18,
+                          letterSpacing: 2,
+                          color: Colors.white,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
@@ -344,13 +373,10 @@ class Aboutme extends StatelessWidget {
                           height: 50,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(255, 114, 114, 114),
-                            borderRadius: BorderRadius.circular(20,),
+                            borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
-                            child: Text('${e}',
-                            style: TextStyle(
-                              fontSize: 60,
-                            ),),
+                            child: Text('${e}', style: TextStyle(fontSize: 60)),
                           ),
                         ),
                       );
@@ -360,17 +386,16 @@ class Aboutme extends StatelessWidget {
                 SizedBox(
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: badgeList.length, 
-                    itemBuilder: (
-                      BuildContext contex, int index){
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage('${badgeList{index}}',
-                            ),
-                          ),
-                        );
-                      }),
+                    itemCount: badgeList.length,
+                    itemBuilder: (BuildContext contex, int index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage('${badgeList[index]}'),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
